@@ -73,19 +73,21 @@ function BlocksRenderer({ content }: { content: any }) {
     );
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const post = await getBlogPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const post = await getBlogPostBySlug(slug);
     return {
         title: post ? `${post.title} - Bistro Boss` : 'Blog Post - Bistro Boss',
         description: post?.excerpt || 'Read our latest blog post.',
     };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
     const [header, footer, post, latestPosts] = await Promise.all([
         getHeader(),
         getFooter(),
-        getBlogPostBySlug(params.slug),
+        getBlogPostBySlug(slug),
         getBlogPosts(5), // For "Read More" section
     ]);
 
@@ -122,7 +124,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         }
         : {};
 
-    const otherPosts = latestPosts.filter(p => p.slug !== params.slug).slice(0, 4);
+    const otherPosts = latestPosts.filter(p => p.slug !== slug).slice(0, 4);
 
     return (
         <div className="bg-white min-h-screen">
