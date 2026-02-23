@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "menu_sections",
+  "info": {
+    "singularName": "menu-section",
+    "pluralName": "menu-sections",
+    "displayName": "Browse Our Menu Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Browse Our Menu"
+    }
+  }
+}

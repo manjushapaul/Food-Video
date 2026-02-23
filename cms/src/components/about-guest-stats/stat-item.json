@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_about_guest_stats_stat_items",
+  "info": {
+    "displayName": "Stat Item",
+    "icon": "hashtag",
+    "description": "Number and short label (e.g. 3, Locations)"
+  },
+  "options": {},
+  "attributes": {
+    "Value": {
+      "type": "string",
+      "required": true
+    },
+    "Label": {
+      "type": "string",
+      "required": true
+    },
+    "Order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

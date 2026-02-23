@@ -1,0 +1,32 @@
+{
+  "Description": "In the new era of technology we look a in the future with certainty and pride to for our company and.",
+  "LogoLink": "/",
+  "PagesTitle": "Pages",
+  "PagesLinks": [
+    { "Label": "Home", "Href": "#home", "Order": 1 },
+    { "Label": "About", "Href": "#about", "Order": 2 },
+    { "Label": "Menu", "Href": "#menu", "Order": 3 },
+    { "Label": "Pricing", "Href": "#pricing", "Order": 4 },
+    { "Label": "Blog", "Href": "#blog", "Order": 5 },
+    { "Label": "Contact", "Href": "#contact", "Order": 6 },
+    { "Label": "Delivery", "Href": "#delivery", "Order": 7 }
+  ],
+  "UtilityTitle": "Utility Pages",
+  "UtilityLinks": [
+    { "Label": "Start Here", "Href": "#", "Order": 1 },
+    { "Label": "Styleguide", "Href": "#", "Order": 2 },
+    { "Label": "Password Protected", "Href": "#", "Order": 3 },
+    { "Label": "404 Not Found", "Href": "#", "Order": 4 },
+    { "Label": "Licenses", "Href": "#", "Order": 5 },
+    { "Label": "Changelog", "Href": "#", "Order": 6 },
+    { "Label": "View More", "Href": "#", "Order": 7 }
+  ],
+  "InstagramTitle": "Follow Us On Instagram",
+  "SocialLinks": [
+    { "Icon": "twitter", "Href": "#", "Order": 1 },
+    { "Icon": "facebook", "Href": "#", "Order": 2 },
+    { "Icon": "instagram", "Href": "#", "Order": 3 },
+    { "Icon": "github", "Href": "#", "Order": 4 }
+  ],
+  "CopyrightText": "Copyright © 2023 Hashtag Developer. All Rights Reserved"
+}

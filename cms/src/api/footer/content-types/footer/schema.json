@@ -1,0 +1,64 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "LogoLink": {
+      "type": "string",
+      "default": "/"
+    },
+    "Description": {
+      "type": "text",
+      "default": "In the new era of technology we look a in the future with certainty and pride to for our company and."
+    },
+    "SocialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.footer-social-link"
+    },
+    "PagesTitle": {
+      "type": "string",
+      "default": "Pages"
+    },
+    "PagesLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.footer-nav-link"
+    },
+    "UtilityTitle": {
+      "type": "string",
+      "default": "Utility Pages"
+    },
+    "UtilityLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.footer-nav-link"
+    },
+    "InstagramTitle": {
+      "type": "string",
+      "default": "Follow Us On Instagram"
+    },
+    "InstagramItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.footer-instagram-item"
+    },
+    "CopyrightText": {
+      "type": "string",
+      "default": "Copyright © 2023 Hashtag Developer. All Rights Reserved"
+    }
+  }
+}

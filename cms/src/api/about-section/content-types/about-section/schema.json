@@ -1,0 +1,62 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_sections",
+  "info": {
+    "singularName": "about-section",
+    "pluralName": "about-sections",
+    "displayName": "About Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "required": false
+    },
+    "AboutPageImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "required": false
+    },
+    "ContactBoxTitle": {
+      "type": "string",
+      "default": "Come and visit us"
+    },
+    "ContactPhone": {
+      "type": "string"
+    },
+    "ContactEmail": {
+      "type": "string"
+    },
+    "ContactAddress": {
+      "type": "text"
+    },
+    "Headline": {
+      "type": "string",
+      "default": "We provide healthy food for your family."
+    },
+    "FirstParagraph": {
+      "type": "text"
+    },
+    "SecondParagraph": {
+      "type": "text"
+    },
+    "ThirdParagraph": {
+      "type": "text",
+      "required": false
+    },
+    "CtaText": {
+      "type": "string",
+      "default": "More About Us"
+    },
+    "CtaLink": {
+      "type": "string",
+      "default": "/about"
+    }
+  }
+}

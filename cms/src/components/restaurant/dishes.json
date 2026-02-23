@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_restaurant_dishes",
+  "info": {
+    "displayName": "dishes"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Price": {
+      "type": "decimal",
+      "required": true
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "All",
+        "Breakfast",
+        "Main Dishes",
+        "Drinks",
+        "Desserts"
+      ]
+    }
+  },
+  "config": {}
+}

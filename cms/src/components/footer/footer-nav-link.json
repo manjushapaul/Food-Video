@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_footer_footer_nav_links",
+  "info": {
+    "displayName": "Footer Nav Link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string",
+      "required": true
+    },
+    "Href": {
+      "type": "string",
+      "required": true
+    },
+    "Order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "Title": "Our Signature Dishes",
+  "Subtitle": "Explore a rotating selection of chef favourites",
+  "Dishes": [
+    {
+      "Subtitle": "CURATED SELECTION",
+      "Name": "Fresh & Healthy",
+      "Description": "Light wraps and bowls built around crisp greens, lean proteins, and house-made dressings. We use the freshest produce and whole ingredients so every bite is nourishing and satisfying—perfect for a quick lunch or a light dinner any day.",
+      "Order": 1
+    },
+    {
+      "Subtitle": "CURATED SELECTION",
+      "Name": "Grilled Specials",
+      "Description": "Tender grilled meats and kebabs, marinated in our secret blends and charred to perfection over the flame. Served with fresh herbs, warm flatbreads, and your choice of sides. A celebration of fire, flavour, and tradition.",
+      "Order": 2
+    },
+    {
+      "Subtitle": "CURATED SELECTION",
+      "Name": "Garden Salads",
+      "Description": "Hand-picked greens, seasonal vegetables, and house dressings made in-house daily. Fresh, colourful, and prepared with care for every plate. A true taste of the garden, from field to table.",
+      "Order": 3
+    }
+  ]
+}

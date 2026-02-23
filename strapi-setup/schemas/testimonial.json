@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials",
+  "info": {
+    "singularName": "testimonial",
+    "pluralName": "testimonials",
+    "displayName": "Testimonial",
+    "description": "Customer testimonials (quote, author, photo)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "required": true,
+      "maxLength": 120
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "role": {
+      "type": "string",
+      "required": false,
+      "maxLength": 80
+    },
+    "company": {
+      "type": "string",
+      "required": false,
+      "maxLength": 120
+    },
+    "order": {
+      "type": "integer",
+      "required": false,
+      "default": 0
+    }
+  }
+}

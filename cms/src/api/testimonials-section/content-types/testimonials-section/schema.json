@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "testimonials_sections",
+  "info": {
+    "singularName": "testimonials-section",
+    "pluralName": "testimonials-sections",
+    "displayName": "Testimonials Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "What Our Customers Say"
+    }
+  }
+}

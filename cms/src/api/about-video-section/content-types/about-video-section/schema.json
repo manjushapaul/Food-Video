@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_video_sections",
+  "info": {
+    "singularName": "about-video-section",
+    "pluralName": "about-video-sections",
+    "displayName": "About Video Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "required": false
+    },
+    "Headline": {
+      "type": "text",
+      "default": "Feel the authentic & original taste from us"
+    },
+    "VideoUrl": {
+      "type": "string",
+      "required": false
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-video-features.about-video-feature"
+    }
+  }
+}

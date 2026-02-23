@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "signature_dishes_sections",
+  "info": {
+    "singularName": "signature-dishes-section",
+    "pluralName": "signature-dishes-sections",
+    "displayName": "Signature Dishes Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Our Signature Dishes"
+    },
+    "Subtitle": {
+      "type": "string",
+      "default": "Explore a rotating selection of chef favourites"
+    },
+    "Dishes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "signature-dishes.signature-dish"
+    }
+  }
+}

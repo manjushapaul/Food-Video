@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_delivery_features_delivery_features",
+  "info": {
+    "displayName": "Delivery Feature",
+    "icon": "bulletList",
+    "description": "A feature item with icon and text (e.g. Delivery within 30 minutes)"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "Text": {
+      "type": "string",
+      "required": true
+    },
+    "Order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

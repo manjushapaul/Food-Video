@@ -1,0 +1,9 @@
+{
+  "Title": "Fastest Food Delivery in City",
+  "Description": "Our visual designer lets you quickly and of drag a down your way to customapps for both keep desktop.",
+  "Features": [
+    { "Text": "Delivery within 30 minutes", "Order": 1 },
+    { "Text": "Best Offer & Prices", "Order": 2 },
+    { "Text": "Online Services Available", "Order": 3 }
+  ]
+}

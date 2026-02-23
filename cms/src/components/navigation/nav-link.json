@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_navigation_nav_links",
+  "info": {
+    "displayName": "Nav Link",
+    "icon": "link",
+    "description": "A navigation menu link"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string",
+      "required": true
+    },
+    "Href": {
+      "type": "string",
+      "required": true
+    },
+    "Order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

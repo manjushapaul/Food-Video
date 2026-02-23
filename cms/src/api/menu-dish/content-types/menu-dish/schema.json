@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "menu_dishes",
+  "info": {
+    "singularName": "menu-dish",
+    "pluralName": "menu-dishes",
+    "displayName": "Dish"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Dish": {
+      "type": "component",
+      "component": "restaurant.menu-items",
+      "repeatable": true
+    },
+    "MenuTitle": {
+      "type": "string"
+    },
+    "MenuDescription": {
+      "type": "text"
+    },
+    "Icons": {
+      "type": "component",
+      "component": "menu-icon.icon-logo",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_footer_footer_instagram_items",
+  "info": {
+    "displayName": "Footer Instagram Item",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "Link": {
+      "type": "string"
+    },
+    "Order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

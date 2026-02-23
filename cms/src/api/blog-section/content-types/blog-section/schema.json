@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "blog_sections",
+  "info": {
+    "singularName": "blog-section",
+    "pluralName": "blog-sections",
+    "displayName": "Blog Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Our Blog & Articles"
+    },
+    "ButtonText": {
+      "type": "string",
+      "default": "Read All Articles"
+    },
+    "ButtonLink": {
+      "type": "string",
+      "default": "/blog"
+    }
+  }
+}

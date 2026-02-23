@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "delivery_sections",
+  "info": {
+    "singularName": "delivery-section",
+    "pluralName": "delivery-sections",
+    "displayName": "Delivery Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Fastest Food Delivery in City"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Our visual designer lets you quickly and of drag a down your way to customapps for both keep desktop."
+    },
+    "ImageLeft": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "ImageMiddleTop": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "ImageMiddleBottom": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "delivery-features.delivery-feature"
+    }
+  }
+}

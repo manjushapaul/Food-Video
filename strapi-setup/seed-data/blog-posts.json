@@ -1,0 +1,38 @@
+[
+  {
+    "Title": "The secret tips & tricks to prepare a perfect burger & pizza for our customers",
+    "Slug": "secret-tips-burger-pizza",
+    "Date": "2023-01-03",
+    "Excerpt": "Lorem ipsum dolor sit amet consectetur of a adipiscing elitilmim semper adipiscing massa gravida nisi cras enim quis nibholm varius amet gravida ut facilisis neque egestas.",
+    "Featured": true,
+    "Order": 1
+  },
+  {
+    "Title": "How to prepare the perfect french fries in an air fryer",
+    "Slug": "perfect-french-fries",
+    "Date": "2023-01-03",
+    "Featured": false,
+    "Order": 2
+  },
+  {
+    "Title": "How to prepare delicious chicken tenders",
+    "Slug": "delicious-chicken-tenders",
+    "Date": "2023-01-03",
+    "Featured": false,
+    "Order": 3
+  },
+  {
+    "Title": "7 delicious cheesecake recipes you can prepare",
+    "Slug": "cheesecake-recipes",
+    "Date": "2023-01-03",
+    "Featured": false,
+    "Order": 4
+  },
+  {
+    "Title": "5 great pizza restaurants you should visit this year",
+    "Slug": "pizza-restaurants",
+    "Date": "2023-01-03",
+    "Featured": false,
+    "Order": 5
+  }
+]

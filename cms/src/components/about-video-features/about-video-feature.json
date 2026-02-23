@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_about_video_features_about_video_features",
+  "info": {
+    "displayName": "About Video Feature",
+    "icon": "star",
+    "description": "Feature card for about page (icon, title, description)"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

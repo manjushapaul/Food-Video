@@ -1,0 +1,12 @@
+{
+  "LogoLink": "/",
+  "NavLinks": [
+    { "Label": "Home", "Href": "#home", "Order": 1 },
+    { "Label": "About", "Href": "#about", "Order": 2 },
+    { "Label": "Menu", "Href": "#menu", "Order": 3 },
+    { "Label": "Pages", "Href": "#pages", "Order": 4 },
+    { "Label": "Contact", "Href": "#contact", "Order": 5 }
+  ],
+  "CtaText": "Book a Table",
+  "CtaLink": "#"
+}

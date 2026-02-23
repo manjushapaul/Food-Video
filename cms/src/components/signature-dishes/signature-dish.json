@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_signature_dishes_signature_dishes",
+  "info": {
+    "displayName": "Signature Dish",
+    "icon": "dish",
+    "description": "A dish in the signature dishes slider"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

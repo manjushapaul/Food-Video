@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_footer_footer_social_links",
+  "info": {
+    "displayName": "Footer Social Link",
+    "icon": "twitter"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "enumeration",
+      "enum": ["twitter", "facebook", "instagram", "github"],
+      "required": true
+    },
+    "Href": {
+      "type": "string",
+      "required": true
+    },
+    "Order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

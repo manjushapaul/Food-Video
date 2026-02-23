@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "Header"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "LogoLink": {
+      "type": "string",
+      "default": "/"
+    },
+    "NavLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.nav-link"
+    },
+    "CtaText": {
+      "type": "string",
+      "default": "Book a Table"
+    },
+    "CtaLink": {
+      "type": "string",
+      "default": "#"
+    }
+  }
+}
