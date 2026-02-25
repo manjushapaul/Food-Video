@@ -33,6 +33,8 @@ const nextConfig = {
         pathname: '/uploads/**',
       },
     ],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
   },
   async rewrites() {
     const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
