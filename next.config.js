@@ -22,6 +22,16 @@ const nextConfig = {
         hostname: '**.ngrok-free.app',
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: '**.ngrok-free.dev',
+        pathname: '/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.loca.lt',
+        pathname: '/uploads/**',
+      },
     ],
   },
   async rewrites() {
