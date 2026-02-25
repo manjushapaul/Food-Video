@@ -396,9 +396,19 @@ export async function getMenuSection(): Promise<MenuSectionStrapi | null> {
 }
 
 // —— Menu Dish Page Header (single type) — Title + Description for /menu page ——
+export interface MenuDishStrapi {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  category: string;
+  image?: StrapiImage | null;
+}
+
 export interface MenuDishHeaderStrapi {
   title?: string;
   description?: string;
+  dishes?: MenuDishStrapi[];
   // Apps Section fields stored in the same single type
   menuTitle?: string;
   menuDescription?: string;
@@ -410,6 +420,7 @@ type IconLogoDoc = { Icon?: StrapiImageData | { url?: string } | null };
 type MenuDishHeaderDoc = {
   Title?: string;
   Description?: string;
+  Dish?: any[];
   MenuTitle?: string;
   MenuDescription?: string;
   Icons?: IconLogoDoc[];
@@ -419,7 +430,10 @@ export async function getMenuDishHeader(): Promise<MenuDishHeaderStrapi | null> 
   if (!STRAPI_URL) return null;
   try {
     const data = await strapiFetch<{ data: unknown }>('/menu-dish', {
-      populate: { Icons: { populate: { Icon: true } } },
+      populate: {
+        Icons: { populate: { Icon: true } },
+        Dish: { populate: { Image: true } },
+      },
       status: 'published',
     });
     const raw = (data as { data?: unknown }).data;
@@ -430,9 +444,22 @@ export async function getMenuDishHeader(): Promise<MenuDishHeaderStrapi | null> 
         .map((item) => normalizeStrapiMedia(item.Icon))
         .filter((x): x is StrapiImage => x !== null)
       : [];
+
+    const dishes = Array.isArray(doc.Dish)
+      ? doc.Dish.map((d: any) => ({
+        id: d.id,
+        name: d.Dish ?? '',
+        price: d.Price ?? 0,
+        description: d.Description ?? '',
+        category: d.Category ?? 'All',
+        image: normalizeStrapiMedia(d.Image),
+      }))
+      : [];
+
     return {
       title: doc.Title ?? undefined,
       description: doc.Description ?? undefined,
+      dishes,
       menuTitle: doc.MenuTitle ?? undefined,
       menuDescription: doc.MenuDescription ?? undefined,
       appLogos: logos.length > 0 ? logos : undefined,

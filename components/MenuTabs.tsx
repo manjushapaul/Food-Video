@@ -11,82 +11,22 @@ interface StrapiMenuItem {
   imageUrl?: string; // resolved absolute URL
 }
 
+import { MenuDishStrapi } from '@/lib/strapi';
+
 const tabs = ['All', 'Breakfast', 'Main Dishes', 'Drinks', 'Desserts'];
 
-export default function MenuTabs() {
+export default function MenuTabs({ initialDishes = [] }: { initialDishes?: MenuDishStrapi[] }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('All');
-  const [menuItems, setMenuItems] = useState<StrapiMenuItem[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function fetchMenu() {
-      try {
-        const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
-
-        // const res = await fetch(`${strapiUrl}/api/menu-dish?populate=*`, {
-        //   next: { revalidate: 300 }
-        // });
-
-        const res = await fetch(`${strapiUrl}/api/menu-dish?populate=Dish.Image`, {
-          next: { revalidate: 300 }
-        });
-
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-        const result = await res.json();
-        console.log('🔍 RAW Strapi response:', JSON.stringify(result, null, 2));
-
-        // DEBUG: Try ALL possible paths
-        const possiblePaths = [
-          result.data?.[0]?.attributes?.Dish,
-          result.data?.attributes?.Dish,
-          result.data?.[0]?.Dish,
-          result.data?.Dish,
-          result.data?.[0]?.attributes?.dishItems,
-          result.data?.attributes?.dishItems
-        ];
-
-        const rawDishes = possiblePaths.find(path => path && Array.isArray(path)) || [];
-        console.log('🔍 Found dishes at path:', rawDishes);
-
-        const dishes: StrapiMenuItem[] = rawDishes.map((dish: any, i: number) => {
-          // dish.Image can be a flat object { url, ... } or nested { data: { attributes: { url } } }
-          const rawImage = dish.Image || dish.image;
-          let imageUrl: string | undefined;
-          if (rawImage) {
-            const relativeUrl =
-              rawImage.url ??
-              rawImage.data?.attributes?.url ??
-              rawImage.attributes?.url;
-            if (relativeUrl) {
-              imageUrl = relativeUrl.startsWith('http')
-                ? relativeUrl
-                : `${strapiUrl}${relativeUrl}`;
-            }
-          }
-          return {
-            name: dish.Dish || dish.name || `Dish ${i}`,
-            price: dish.Price || dish.price || 0,
-            description: dish.Description || dish.description || '',
-            category: dish.Category || dish.category || 'All',
-            imageUrl,
-          };
-        });
-
-        console.log('🍽️ FINAL dishes:', dishes);
-        setMenuItems(dishes);
-        console.log('🖼️ Images check:', dishes.map(d => ({ name: d.name, imageUrl: d.imageUrl })));
-
-      } catch (error) {
-        console.error('❌ Error:', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchMenu();
-  }, []);
+  const menuItems = initialDishes.map(d => ({
+    name: d.name,
+    price: d.price,
+    description: d.description,
+    category: d.category,
+    imageUrl: d.image?.url,
+  }));
 
 
   useEffect(() => {
@@ -101,15 +41,6 @@ export default function MenuTabs() {
   const filteredItems = activeTab === 'All'
     ? menuItems
     : menuItems.filter(item => item.category === activeTab);
-
-  if (loading) {
-    return (
-      <div className="flex flex-col items-center justify-center py-20">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#AD343E]"></div>
-        <p className="mt-4 text-gray-600">Loading menu from Strapi...</p>
-      </div>
-    );
-  }
 
   return (
     <div className="w-full">
@@ -137,7 +68,7 @@ export default function MenuTabs() {
           <div className="col-span-full text-center py-20">
             <p className="text-xl text-gray-500 mb-4">No menu items found</p>
             <p className="text-sm text-gray-400">
-              {loading ? 'Loading...' : 'Add dishes in Strapi Admin → Content Manager → Dishes'}
+              Add dishes in Strapi Admin → Content Manager → Dish (Single Type)
             </p>
           </div>
         ) : (

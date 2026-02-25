@@ -62,7 +62,7 @@ export default async function MenuPage() {
           {menuDescription}
         </p>
         <div className="mt-12">
-          <MenuTabs />
+          <MenuTabs initialDishes={menuDishHeader?.dishes} />
         </div>
       </section>
       <AppsSection
