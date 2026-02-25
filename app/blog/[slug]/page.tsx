@@ -142,13 +142,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                         {/* Detail Image */}
                         {post.detailImage && (
-                            <div className="relative w-full overflow-hidden mb-16 shadow-lg">
+                            <div className="relative w-full overflow-hidden mb-8 lg:mb-16 shadow-lg">
                                 <Image
                                     src={post.detailImage.url}
                                     alt={post.title ?? ''}
                                     width={1640}
                                     height={660}
-                                    className="w-full h-auto object-contain"
+                                    className="w-full h-auto lg:object-contain max-md:min-height:300px max-md:object-cover"
                                     priority
                                 />
                             </div>
