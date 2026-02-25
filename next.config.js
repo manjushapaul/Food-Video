@@ -17,7 +17,29 @@ const nextConfig = {
         pathname: '/uploads/**',
         port: '1337',
       },
+      {
+        protocol: 'https',
+        hostname: '**.ngrok-free.app',
+        pathname: '/uploads/**',
+      },
     ],
+  },
+  async rewrites() {
+    const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
+    return [
+      {
+        source: '/admin/:path*',
+        destination: `${STRAPI_URL}/admin/:path*`,
+      },
+      {
+        source: '/api/:path*',
+        destination: `${STRAPI_URL}/api/:path*`,
+      },
+      {
+        source: '/uploads/:path*',
+        destination: `${STRAPI_URL}/uploads/:path*`,
+      },
+    ];
   },
 }
 
