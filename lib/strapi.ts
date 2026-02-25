@@ -90,9 +90,12 @@ function normalizeStrapiImage(data: StrapiImageData | null | undefined): StrapiI
     ? (data as { attributes?: { url: string } }).attributes?.url
     : (data as { url?: string }).url;
   if (!url) return null;
-  const base = STRAPI_URL || '';
+  // If it's already an absolute URL (external), keep as-is.
+  // If it's a relative Strapi upload path (/uploads/...), keep relative so that
+  // the Next.js rewrite proxy serves it without going through ngrok directly.
+  const finalUrl = url.startsWith('http') ? url : url;
   return {
-    url: url.startsWith('http') ? url : `${base}${url}`,
+    url: finalUrl,
     alternativeText: (data as { attributes?: { alternativeText?: string } }).attributes?.alternativeText,
     width: (data as { attributes?: { width?: number } }).attributes?.width,
     height: (data as { attributes?: { height?: number } }).attributes?.height,
@@ -120,9 +123,11 @@ function normalizeStrapiMedia(media: StrapiImageData | { url?: string; attribute
   const m = unwrapped as { url?: string; attributes?: { url?: string } };
   const url = m?.url ?? m?.attributes?.url;
   if (!url || typeof url !== 'string') return null;
-  const base = STRAPI_URL || '';
+  // Keep relative /uploads/ paths as-is so the Next.js rewrite proxy handles them.
+  // Only prepend base URL for genuinely external absolute URLs from other providers.
+  const finalUrl = url.startsWith('http') ? url : url;
   return {
-    url: url.startsWith('http') ? url : `${base}${url}`,
+    url: finalUrl,
   };
 }
 
