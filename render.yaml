@@ -3,7 +3,7 @@ services:
     name: food-video-cms
     runtime: node
     plan: free
-    rootDirectory: cms
+    rootDir: cms
     buildCommand: npm install && npm run build
     startCommand: npm run start
     envVars:
