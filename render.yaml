@@ -11,6 +11,8 @@ services:
         value: production
       - key: NODE_VERSION
         value: 20.11.0
+      - key: URL
+        value: https://food-video-cms.onrender.com
       - key: DATABASE_CLIENT
         value: postgres
       - key: DATABASE_URL
